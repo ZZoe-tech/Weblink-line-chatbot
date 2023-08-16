@@ -57,7 +57,7 @@ def mewobot():
     return 'Cat Time!!!'
 
 # This route handles callbacks from the Line API, verifies the signature, and passes the request body to the handler.
-@app.route("/callback", methods=['POST'])
+@app.route("/webhook", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
